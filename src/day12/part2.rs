@@ -89,7 +89,7 @@ fn isolate_region(region: &Vec<(usize, usize)>) -> Vec<Vec<char>> {
 }
 fn calculate_cost(isolated_region: Vec<Vec<char>>) -> i32 {
     let mut area = 0;
-    let mut perimeter = 0;
+    let perimeter = 0;
 
     for (row_i, row) in isolated_region.iter().enumerate() {
 
@@ -98,7 +98,7 @@ fn calculate_cost(isolated_region: Vec<Vec<char>>) -> i32 {
         println!("{:?}", grouped);
         for group in grouped {
           if group[0] == 'X' {
-            for (i,char) in group.iter().enumerate() {
+            for (_,_) in group.iter().enumerate() {
 
             }
 
@@ -107,7 +107,7 @@ fn calculate_cost(isolated_region: Vec<Vec<char>>) -> i32 {
         }
 
 
-        for (col_i, col) in row.iter().enumerate() {
+        for (col_i, _) in row.iter().enumerate() {
             if isolated_region[row_i][col_i] == 'X' {
                 area += 1;
             }
